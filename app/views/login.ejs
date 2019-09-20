@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89656176-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89656176-3');
+</script>
+
+    <meta charset="UTF-8">    
+    <title>CleverPack review code effectively!</title>
+    <link rel="stylesheet" href="/css/style_temp.css">
+
+    <meta property="og:image:width" content="279">
+    <meta property="og:image:height" content="279">
+    <meta property="og:title" content="CleverPack review code effectively!">
+    <meta property="og:description"
+          content="Collaborate with your team using CleverPack to achieve highest goals in productivity and code efficiency">
+    <meta property="og:url" content="cleverpack.herokuapp.com">
+    <meta property="og:image" content="https://cleverpack.herokuapp.com/img/og-image.jpg">
+
+</head>
+<body>
+        <script src='/js/jquery.min.js'></script>
+        <script>
+        $("body").css("display", "none");
+        $(document).ready(function () {
+        // to fade in on page load
+        $("body").fadeIn(800);
+        // to fade out before redirect
+        
+    })
+    </script>
+<div class="login-page">
+    <div class="form">
+        <div class="social-buttons">
+            <div><span>Login</span> via</div>
+            <!--<a href="/auth/facebook">-->
+            <!--<img class="loginBtn" src="img/facebookLoginBtn.png" alt="Sign-In with Facebook">-->
+            <!--</a>-->
+            <a href="/auth/google">
+                <img class="loginBtn" alt="Sign-In with Google">
+            </a>
+            <!--<a href="/auth/twitter">-->
+            <!--<img class="loginBtn" src="img/twitterLoginBtn.png" alt="Sign-In with Twitter">-->
+            <!--</a>-->
+        </div>
+
+        <div class="form-line"></div>
+
+        <div style="margin-top: 18px;">
+            <form action="/register" class="register-form" method="post">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+                <% if (errors != null && showRegisterForm != null && showRegisterForm === true) { %>
+                <% errors.forEach(function(err){ %>
+                <p class="message error"><%= err %></p>
+                <% }); %>
+                <% } %>
+            </form>
+            <form action="/login" class="login-form" method="post">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <% if (errors != null && showRegisterForm == null) { %>
+                <% errors.forEach(function(err){ %>
+                <p class="message error"><%= err %></p>
+                <% }); %>
+                <% } if (success != null && showRegisterForm == null) { %>
+                <p class="message success"><%= success %></p>
+                <% } %>
+            </form>
+        </div>
+    </div> <!-- end form -->
+</div> <!-- end login container -->
+
+
+<% if(showRegisterForm != null && showRegisterForm === true) { %>
+<script>
+    $('.register-form').show();
+    $('.login-form, .social-buttons, .form-line').hide();
+</script>
+<% } %>
+<script>
+    $('.message a').click(function () {
+        $('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89656176-3"></script>
+
+
+</body>
+</html>

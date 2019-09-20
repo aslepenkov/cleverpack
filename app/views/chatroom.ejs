@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89656176-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-89656176-3');
+    </script>
+
+    <meta charset="UTF-8">
+    <title>CleverPack review code effectively!</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>-->
+    <script src="/js/jquery-1.12.4.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#draggable").draggable();
+        });
+    </script>
+</head>
+
+<body>
+
+    <script>
+        $("body").css("display", "none");
+        $(document).ready(function () {
+            // to fade in on page load
+            $("body").fadeIn(800);
+            // to fade out before redirect
+
+        })
+    </script>
+
+
+    <div class="whiteboard-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="right-corner-controls">
+        <div class="colors">
+            <div class="color black"></div>
+            <div class="color red"></div>
+            <div class="color green"></div>
+            <div class="color blue"></div>
+            <div class="color yellow"></div>
+            <div class="color white"></div>
+            <a href="/logout" class="logout-btn">Logout</a>
+            <a href="/rooms" class="rooms-btn">Rooms</a>
+            <a class="code-btn" onclick="clr()">Clear</a>
+        </div>
+    </div>
+    <!--<div class="container clearfix">-->
+    <div class="chat">
+        <div class="chat-header-big clearfix">
+            <!--<img src="https://api.adorable.io/avatars/60/<%= user.username %>" alt="avatar">-->
+            <div class="chat-about">
+                <div class="chat-room">
+                    <%= room.title %>
+                </div>
+                <div class="chat-num-users"> User(s)</div>
+
+                <div class="users-list">
+                    <ul class="list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chat-history">
+            <ul>
+            </ul>
+        </div>
+        <!-- end chat-history -->
+
+        <div class="chat-message clearfix">
+            <textarea name="message" placeholder="Type your message" rows="3"></textarea>
+            <button type="submit">Send</button>
+        </div>
+        <!-- end chat-message -->
+    </div>
+    <!-- end chat -->
+    <div id="draggable" class="card mb-2 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">CODE</h4>
+        </div>
+        <div class="card-body">
+            <div id="editor" class="code-history">function foo(items) { var x = "All this is syntax highlighted"; return
+                x; }
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="users-list">-->
+    <!--<ul class="list">-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div> &lt;!&ndash; end container &ndash;&gt;-->
+
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/ace/ace.js"></script>
+    <script>
+
+        $(function () {
+            app.chat('<%= room.id %>', '<%= user.username %>')
+        });
+        function clr() {
+            document.getElementById('canvas').width += 0;
+        }
+    </script>
+</body>
+
+</html>

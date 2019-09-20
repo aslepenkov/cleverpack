@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CleverPack review code effectively!</title>
+</head>
+
+<body>
+    <pre>
+    var UserSchema = new Mongoose.Schema({
+    username: { type: String, required: true},
+    password: { type: String, default: null },
+    socialId: { type: String, default: null },
+    picture:  { type: String, default:  DEFAULT_USER_PICTURE}
+});
+var RoomSchema = new Mongoose.Schema({
+    title: { type: String, required: true },
+    connections: { type: [{ userId: String, socketId: String }]}
+});
+var CodeSchema = new Mongoose.Schema({
+    title: { type: String, required: true },
+    roomId: { type: String, required: true },
+    created_at: Date
+    // connections: { type: [{ userId: String, socketId: String }]}
+});
+var MsgSchema = new Mongoose.Schema({
+    title: { type: String, required: true },
+    roomId: { type: String, required: true },
+    created_at: Date
+});
+</pre>
+
+    <h2>ROOMS</h2>
+    <% if(rooms.length > 0) { %>
+    <% rooms.forEach(function(room) { %>
+    <%= room.id %>
+    <li class="room-item">
+        <%= room.title %>:<%= room.connections %>
+    </li>
+
+    <% }); %>
+    <% } else { %>
+    <p class="message" style="text-align: center; padding: 0; margin: 0;">ROOMS NOT FOUND!</p>
+    <% } %>
+    <h2>MESSAGES</h2>
+    <% if(messages.length > 0) { %>
+    <% messages.forEach(function(m) { %>
+    <%= m.id %>
+    <li class="m-item">
+        <%= m.title %>
+    </li>
+
+    <% }); %>
+    <% } else { %>
+    <p class="message" style="text-align: center; padding: 0; margin: 0;">MESSAGES NOT FOUND!</p>
+    <% } %>
+
+    <h2>CODE</h2>
+    <% if(codes.length > 0) { %>
+    <% codes.forEach(function(c) { %>
+    <%= c.id %>
+
+    <li class="m-item">
+        <%= c.roomId %>: <%= c.created_at %>
+        <textarea rows="4" cols="50">
+        <%= c.title %>
+    </textarea>
+    </li>
+
+    <% }); %>
+    <% } else { %>
+    <p class="message" style="text-align: center; padding: 0; margin: 0;">CODES NOT FOUND!</p>
+    <% } %>
+
+    <h2>USERS</h2>
+    <p></p>
+    <% if(users.length > 0) { %>
+    <% users.forEach(function(u) { %>
+    <%= u.id %>
+    <li class="m-item">
+        <%= u.username %>
+    </li>
+
+    <% }); %>
+    <% } else { %>
+    <p class="message" style="text-align: center; padding: 0; margin: 0;">USERS NOT FOUND!</p>
+    <% } %>
+
+</body>
+
+</html>

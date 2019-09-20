@@ -1,0 +1,8 @@
+# Node Dependencies
+node_modules
+.idea
+.vs
+
+# Logs
+debug.log
+

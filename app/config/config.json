@@ -1,0 +1,45 @@
+{
+	"db": {
+		"username": "YOUR NAME",
+		"password": "YOUR PASS",
+		"host": "ds225028.mlab.com",
+		"port": "25028",
+		"name": "mean-chat"
+	},
+	"sessionSecret": "<RandomString>",
+	"facebook": {
+		"clientID": "<AppID>",
+		"clientSecret": "<AppSecret>",
+		"callbackURL": "/auth/facebook/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"photos"
+		]
+	},
+	"twitter": {
+		"consumerKey": "<ConsumerKey>",
+		"consumerSecret": "<ConsumerSecret>",
+		"callbackURL": "/auth/twitter/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"photos"
+		]
+	},
+	"google": {
+		"clientID": "ID",
+		"clientSecret": "SECRET",
+		"callbackURL": "/auth/google/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"picture"
+		]
+	},
+	"redis": {
+		"host": "REDISLABS SERVER",
+		"port": 12183,
+		"password": "PASSWORD"
+	}
+}

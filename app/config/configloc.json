@@ -1,0 +1,45 @@
+{
+	"db": {
+		"username": "YOUR NAME",
+		"password": "YOUR PASS",
+		"host": "127.0.0.1",
+		"port": "27017",
+		"name": "mean-chat"
+	},
+	"sessionSecret": "<RandomString>",
+	"facebook": {
+		"clientID": "<AppID>",
+		"clientSecret": "<AppSecret>",
+		"callbackURL": "/auth/facebook/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"photos"
+		]
+	},
+	"twitter": {
+		"consumerKey": "<ConsumerKey>",
+		"consumerSecret": "<ConsumerSecret>",
+		"callbackURL": "/auth/twitter/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"photos"
+		]
+	},
+	"google": {
+		"clientID": "ID",
+		"clientSecret": "SECRET",
+		"callbackURL": "/auth/google/callback",
+		"profileFields": [
+			"id",
+			"displayName",
+			"picture"
+		]
+	},
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"password": "CvCy55UsC7BZTzKH8ek01Gr5ixzscEpG"
+	}
+}
