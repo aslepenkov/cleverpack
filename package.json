@@ -19,7 +19,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "heroku-ssl-redirect": "0.0.4",
-    "mongoose": "^4.13.13",
+    "mongoose": "^5.7.5",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google": "^0.3.0",
